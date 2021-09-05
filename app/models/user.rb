@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :todo_items, dependent: :destroy
+  enum role: %i[customer admin]
 end

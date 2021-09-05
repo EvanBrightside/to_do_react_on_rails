@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise'
 
+gem 'trestle'
+gem 'trestle-auth'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
