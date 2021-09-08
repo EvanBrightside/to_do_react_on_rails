@@ -16,4 +16,16 @@ class User < ApplicationRecord
       user.password = Devise.friendly_token[0, 20]
     end
   end
+
+  def self.from_telegram(auth)
+    where(telegram_id: auth['id']).first_or_create! do |user|
+      user.email = "tg_#{auth['id']}@todo.app"
+      user.telegram_id = auth['id']
+      user.first_name = auth['first_name']
+      user.last_name = auth['last_name']
+      user.username = auth['username']
+      user.photo_url = auth['photo_url']
+      user.password = Devise.friendly_token[0, 20]
+    end
+  end
 end

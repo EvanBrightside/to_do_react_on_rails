@@ -17,12 +17,27 @@
 <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
   <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
 <% end %>
-<br />
+
 <%# <%- if devise_mapping.omniauthable? %>
 <%#   <%- resource_class.omniauth_providers.each do |provider| %>
 <%#     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %>
 <%#   <% end %>
 <%# <% end %>
+
+<br />
+
+<div>
+  <script async
+    src="https://telegram.org/js/telegram-widget.js?14"
+    data-telegram-login="mate_assistant_bot"
+    data-size="large"
+    data-userpic="false"
+    data-auth-url="<%= url_for(controller: "devise/telegram", action: 'telegram_auth') %>"
+    data-request-access="write">
+  </script>
+</div>
+
+<br />
 
 <a class="btn btn-secondary" style="background-color: #000000;" href="/users/auth/github" data-method="post" role="button">
   <i class="fab fa-github me-2"></i>Sign in with Github
