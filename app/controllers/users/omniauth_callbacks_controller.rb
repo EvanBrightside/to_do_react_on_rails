@@ -9,8 +9,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     auth_handling
   end
 
-  private
-
   def auth_handling
     auth_data = request.env['omniauth.auth']
     return redirect_to new_user_registration_url if auth_data.empty?
