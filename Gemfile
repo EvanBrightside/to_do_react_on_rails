@@ -23,6 +23,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-telegram'
 
 gem 'trestle'
 gem 'trestle-auth'

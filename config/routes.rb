@@ -4,9 +4,6 @@ Rails.application.routes.draw do
     root 'pages#my_todo_items', as: :authenticated_root
   end
 
-  get 'telegram_auth', to: 'devise/telegram#telegram_auth'
-  post 'telegram_auth', to: 'devise/telegram#telegram_auth'
-
   root to: redirect('/users/sign_in')
 
   namespace :api, defaults: { format: :json } do
